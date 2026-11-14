@@ -1,0 +1,6 @@
+{
+  "name": "숲길 따라 — 아침고요수목원 겨울 여행 가이드",
+  "description": "겨울철 아침고요수목원의 자연과 정원을 에디토리얼 형식으로 소개하고 방문 인증 쿠폰 이벤트 흐름을 제공하는 반응형 웹 가이드입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
