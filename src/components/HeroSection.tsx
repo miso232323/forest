@@ -44,13 +44,18 @@ export function HeroSection({
               </p>
 
               <h1
-                className="font-serif font-semibold leading-[1.2] text-white"
+                className="font-serif leading-[1.2] text-white"
                 style={{
                   fontSize: 'clamp(2.15rem, 4.5vw, 3.75rem)',
                 }}
               >
                 {HERO_CONTENT.headlineLines.map((line, index) => (
-                  <span key={index} className="block">
+                  <span
+                    key={index}
+                    className={`block ${
+                      index === 0 ? 'font-light text-white/95' : 'font-bold text-white'
+                    }`}
+                  >
                     {line}
                   </span>
                 ))}
@@ -58,7 +63,14 @@ export function HeroSection({
 
               <p className="max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg">
                 {HERO_CONTENT.bodyLines.map((line, index) => (
-                  <span key={index} className="block">
+                  <span
+                    key={index}
+                    className={`block ${
+                      index === HERO_CONTENT.bodyLines.length - 1
+                        ? 'font-medium text-white'
+                        : 'font-light text-white/90'
+                    }`}
+                  >
                     {line}
                   </span>
                 ))}
@@ -87,11 +99,10 @@ export function HeroSection({
           </div>
         </div>
 
-        {/* Quiet Figure Caption + Operational Utility Strip */}
-        <div className="mt-4 flex flex-col gap-3 border-b border-[#E7EAE6] pb-4 text-xs text-[#5A625A] sm:flex-row sm:items-center sm:justify-between">
-          <p>{HERO_CONTENT.imageCaption}</p>
+        {/* Operational Utility Strip */}
+        <div className="mt-4 flex flex-col gap-3 border-b border-[#E7EAE6] pb-4 text-xs font-light text-[#5A625A] sm:flex-row sm:items-center sm:justify-end">
           <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
-            <span>{SITE_BRAND.subtitle}</span>
+            <span className="font-medium text-[#303630]">{SITE_BRAND.subtitle}</span>
             <span aria-hidden="true">·</span>
             <span>경기도 가평군 상면</span>
             <span aria-hidden="true">·</span>

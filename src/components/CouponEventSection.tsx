@@ -258,18 +258,21 @@ export function CouponEventSection() {
         {/* Section Header */}
         <div className="flex flex-col gap-6 border-b border-[#E7EAE6] pb-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl space-y-3">
-            <p className="text-xs font-medium tracking-widest text-[#234B38]">
+            <p className="text-xs font-bold tracking-widest text-[#234B38]">
               07. Coupon Event
             </p>
             <h2
               id="coupon-heading"
-              className="font-serif text-2xl font-semibold text-[#234B38] sm:text-3xl lg:text-4xl"
+              className="font-serif text-2xl text-[#234B38] sm:text-3xl lg:text-4xl"
               style={{ textWrap: 'balance' }}
             >
-              방문 인증 이벤트 · {COUPON_POLICY_CONFIG.benefitTitle}
+              <span className="font-light">방문 인증 이벤트 · </span>
+              <span className="font-bold underline decoration-[#A8BBA8] underline-offset-4">
+                {COUPON_POLICY_CONFIG.benefitTitle}
+              </span>
             </h2>
-            <p className="text-sm leading-relaxed text-[#5A625A] sm:text-base">
-              입장권과 현장 방문 사진을 인증하면 카페 음료 할인 쿠폰 발급 절차를 진행할 수 있습니다. 계정당 1회 참여를 원칙으로 합니다.
+            <p className="text-sm font-light leading-relaxed text-[#5A625A] sm:text-base">
+              입장권과 현장 방문 사진을 인증하면 카페 음료 할인 쿠폰 발급 절차를 진행할 수 있습니다. <strong className="font-semibold text-[#234B38]">계정당 1회 참여</strong>를 원칙으로 합니다.
             </p>
           </div>
 

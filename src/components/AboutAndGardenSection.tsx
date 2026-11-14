@@ -26,23 +26,29 @@ export function AboutAndGardenSection() {
               transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-8 space-y-6"
             >
-              <p className="text-xs font-medium tracking-widest text-[#234B38]">
+              <p className="text-xs font-bold tracking-widest text-[#234B38]">
                 {ABOUT_CONTENT.sectionLabel}
               </p>
 
               <h2
                 id="about-heading"
-                className="font-serif text-2xl font-semibold leading-snug text-[#234B38] sm:text-3xl lg:text-4xl"
-                style={{ textWrap: 'balance' }}
+                className="font-serif text-2xl leading-snug text-[#234B38] sm:text-3xl lg:text-4xl"
               >
-                {ABOUT_CONTENT.title}
+                {ABOUT_CONTENT.titleLines.map((line, index) => (
+                  <span
+                    key={index}
+                    className={`block ${index === 0 ? 'font-light' : 'font-bold'}`}
+                  >
+                    {line}
+                  </span>
+                ))}
               </h2>
 
-              <p className="max-w-prose text-base leading-[1.8] text-[#303630] sm:text-lg">
+              <p className="max-w-prose text-base font-medium leading-[1.75] text-[#234B38] sm:text-lg">
                 {ABOUT_CONTENT.lead}
               </p>
 
-              <div className="max-w-prose space-y-4 text-sm leading-[1.8] text-[#303630] sm:text-base">
+              <div className="max-w-prose space-y-4 text-sm font-light leading-[1.8] text-[#303630] sm:text-base">
                 {ABOUT_CONTENT.paragraphs.map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
@@ -58,19 +64,24 @@ export function AboutAndGardenSection() {
               className="lg:col-span-4 flex flex-col justify-between gap-8"
             >
               <blockquote className="border-y border-[#D4DCD3] py-6">
-                <p className="font-serif text-xl font-medium italic leading-relaxed text-[#234B38]">
-                  “{ABOUT_CONTENT.pullQuote}”
+                <p className="font-serif text-xl leading-relaxed text-[#234B38]">
+                  <span className="block font-light italic">
+                    “{ABOUT_CONTENT.pullQuoteLines[0]}
+                  </span>
+                  <span className="mt-1 block font-bold">
+                    {ABOUT_CONTENT.pullQuoteLines[1]}”
+                  </span>
                 </p>
-                <footer className="mt-3 text-xs text-[#5A625A]">
+                <footer className="mt-3 text-xs font-light text-[#5A625A]">
                   {HERO_CONTENT.subQuote}
                 </footer>
               </blockquote>
 
               <div className="rounded-lg border border-[#E7EAE6] bg-white p-5">
-                <p className="text-xs font-medium text-[#234B38]">
+                <p className="text-xs font-bold text-[#234B38]">
                   이용 안내 및 콘텐츠 원칙
                 </p>
-                <p className="mt-2 text-xs leading-relaxed text-[#5A625A]">
+                <p className="mt-2 text-xs font-light leading-relaxed text-[#5A625A]">
                   {ABOUT_CONTENT.policyNotice}
                 </p>
               </div>
@@ -88,19 +99,19 @@ export function AboutAndGardenSection() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4 border-b border-[#E7EAE6] pb-8 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-2xl space-y-3">
-              <p className="text-xs font-medium tracking-widest text-[#234B38]">
+              <p className="text-xs font-bold tracking-widest text-[#234B38]">
                 02. Winter Garden
               </p>
               <h2
                 id="winter-garden-heading"
-                className="font-serif text-2xl font-semibold text-[#234B38] sm:text-3xl lg:text-4xl"
-                style={{ textWrap: 'balance' }}
+                className="font-serif text-2xl leading-snug text-[#234B38] sm:text-3xl lg:text-4xl"
               >
-                겨울 정원에서 만나는 네 가지 풍경
+                <span className="block font-light">겨울 정원에서</span>
+                <span className="block font-bold">만나는 네 가지 풍경</span>
               </h2>
             </div>
-            <p className="max-w-sm text-sm leading-relaxed text-[#5A625A]">
-              계절의 속도에 맞춰 천천히 걸으며 만나는 겨울 수목원의 주요 관람 포인트입니다.
+            <p className="max-w-sm text-sm font-light leading-relaxed text-[#5A625A]">
+              계절의 속도에 맞춰 천천히 걸으며 만나는 <strong className="font-semibold text-[#234B38]">겨울 수목원의 주요 관람 포인트</strong>입니다.
             </p>
           </div>
 
@@ -128,24 +139,26 @@ export function AboutAndGardenSection() {
                 <div className="mt-5 flex flex-1 flex-col justify-between space-y-4">
                   <div className="space-y-2">
                     <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[#5A625A]">
-                      <span>{item.subtitle}</span>
+                      <span className="font-semibold text-[#234B38] underline decoration-[#A8BBA8] underline-offset-4">
+                        {item.subtitle}
+                      </span>
                       <span aria-hidden="true">·</span>
                       <span
                         className={
                           item.verificationStatus === 'pending_verification'
                             ? 'font-medium text-[#7A5418]'
-                            : 'text-[#234B38]'
+                            : 'font-light text-[#234B38]'
                         }
                       >
                         {item.scheduleLabel}
                       </span>
                     </div>
 
-                    <h3 className="font-serif text-xl font-semibold text-[#303630] group-hover:text-[#234B38] transition-colors">
+                    <h3 className="font-serif text-xl font-bold text-[#303630] group-hover:text-[#234B38] transition-colors">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm leading-relaxed text-[#5A625A] sm:text-base">
+                    <p className="text-sm font-light leading-relaxed text-[#5A625A] sm:text-base">
                       {item.description}
                     </p>
                   </div>

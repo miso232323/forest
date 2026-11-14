@@ -45,23 +45,24 @@ export function EcoAndVisitSection({
               transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-7 space-y-6"
             >
-              <div className="space-y-2">
-                <p className="text-xs font-medium tracking-widest text-[#234B38]">
+              <div className="space-y-2.5">
+                <p className="text-xs font-bold tracking-widest text-[#234B38]">
                   {ECO_STORY_CONTENT.sectionLabel}
                 </p>
                 <h2
                   id="eco-story-heading"
-                  className="font-serif text-2xl font-semibold text-[#234B38] sm:text-3xl lg:text-4xl"
+                  className="font-serif text-2xl text-[#234B38] sm:text-3xl lg:text-4xl"
                   style={{ textWrap: 'balance' }}
                 >
-                  {ECO_STORY_CONTENT.title}
+                  <span className="font-light">겨울 숲의 </span>
+                  <span className="font-bold">생태 이야기</span>
                 </h2>
-                <p className="text-sm text-[#5A625A]">
+                <p className="text-sm font-semibold text-[#234B38] underline decoration-[#A8BBA8] underline-offset-4">
                   {ECO_STORY_CONTENT.subtitle}
                 </p>
               </div>
 
-              <p className="max-w-prose text-base leading-[1.9] text-[#303630] sm:text-lg first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:font-serif first-letter:text-5xl first-letter:font-semibold first-letter:leading-none first-letter:text-[#234B38]">
+              <p className="max-w-prose text-base font-light leading-[1.25] text-[#303630] sm:text-[17px] first-letter:float-left first-letter:mr-2.5 first-letter:mt-0.5 first-letter:font-serif first-letter:text-[2.6rem] first-letter:font-bold first-letter:leading-[0.95] first-letter:text-[#234B38]">
                 {ECO_STORY_CONTENT.body}
               </p>
             </motion.div>
@@ -73,10 +74,10 @@ export function EcoAndVisitSection({
                   key={note.term}
                   className="rounded-lg border border-[#E7EAE6] bg-white p-5"
                 >
-                  <h3 className="font-serif text-base font-semibold text-[#234B38]">
+                  <h3 className="font-serif text-base font-bold text-[#234B38]">
                     {note.term}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#5A625A]">
+                  <p className="mt-2 text-sm font-light leading-relaxed text-[#5A625A]">
                     {note.detail}
                   </p>
                 </div>
@@ -95,19 +96,20 @@ export function EcoAndVisitSection({
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4 border-b border-[#E7EAE6] pb-8 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-2xl space-y-3">
-              <p className="text-xs font-medium tracking-widest text-[#234B38]">
+              <p className="text-xs font-bold tracking-widest text-[#234B38]">
                 06. Visit Information
               </p>
               <h2
                 id="visit-heading"
-                className="font-serif text-2xl font-semibold text-[#234B38] sm:text-3xl lg:text-4xl"
+                className="font-serif text-2xl text-[#234B38] sm:text-3xl lg:text-4xl"
                 style={{ textWrap: 'balance' }}
               >
-                위치 및 방문 정보
+                <span className="font-light">위치 및 </span>
+                <span className="font-bold">방문 정보</span>
               </h2>
             </div>
 
-            <p className="text-xs text-[#5A625A]">
+            <p className="text-xs font-light text-[#5A625A]">
               {SITE_BRAND.lastPolicyReview}
             </p>
           </div>
@@ -118,7 +120,7 @@ export function EcoAndVisitSection({
                 key={row.id}
                 className="grid grid-cols-1 gap-2 py-5 sm:grid-cols-12 sm:gap-6"
               >
-                <dt className="text-sm font-medium text-[#234B38] sm:col-span-3">
+                <dt className="text-sm font-bold text-[#234B38] sm:col-span-3">
                   {row.label}
                 </dt>
 
@@ -130,7 +132,7 @@ export function EcoAndVisitSection({
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={onOfficialLinkClick}
-                        className="inline-flex items-center gap-1.5 text-sm font-medium text-[#234B38] underline decoration-[#A8BBA8] underline-offset-4 hover:decoration-[#234B38] sm:text-base"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#234B38] underline decoration-[#A8BBA8] underline-offset-4 hover:decoration-[#234B38] sm:text-base"
                       >
                         <span>아침고요수목원 공식 홈페이지 바로가기</span>
                         <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -140,8 +142,8 @@ export function EcoAndVisitSection({
                         className={`text-sm sm:text-base ${
                           row.verificationStatus === 'pending_verification' &&
                           row.value.includes('확인 필요')
-                            ? 'font-medium text-[#7A5418]'
-                            : 'text-[#303630]'
+                            ? 'font-semibold text-[#7A5418]'
+                            : 'font-normal text-[#303630]'
                         }`}
                       >
                         {row.value}
@@ -170,7 +172,7 @@ export function EcoAndVisitSection({
                   </div>
 
                   {row.note ? (
-                    <p className="text-xs leading-relaxed text-[#5A625A]">
+                    <p className="text-xs font-light leading-relaxed text-[#5A625A]">
                       {row.note}
                     </p>
                   ) : null}

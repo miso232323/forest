@@ -55,18 +55,18 @@ export function ExperienceAndTipsSection({
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6 border-b border-[#D9DFD7] pb-8 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl space-y-3">
-              <p className="text-xs font-medium tracking-widest text-[#234B38]">
+              <p className="text-xs font-bold tracking-widest text-[#234B38]">
                 03. Experience
               </p>
               <h2
                 id="experience-heading"
-                className="font-serif text-2xl font-semibold text-[#234B38] sm:text-3xl lg:text-4xl"
-                style={{ textWrap: 'balance' }}
+                className="font-serif text-2xl leading-snug text-[#234B38] sm:text-3xl lg:text-4xl"
               >
-                겨울 체험 및 계절 프로그램 안내
+                <span className="block font-light">겨울 체험 및</span>
+                <span className="block font-bold">계절 프로그램 안내</span>
               </h2>
-              <p className="text-sm leading-relaxed text-[#5A625A]">
-                상시 관람 코스와 연도별 일정 확인이 필요한 계절 프로그램을 구분해 안내합니다.
+              <p className="text-sm font-light leading-relaxed text-[#5A625A]">
+                <strong className="font-semibold text-[#234B38]">상시 관람 코스</strong>와 연도별 일정 확인이 필요한 계절 프로그램을 구분해 안내합니다.
               </p>
             </div>
 
@@ -111,48 +111,48 @@ export function ExperienceAndTipsSection({
                   <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-start">
                     <div className="lg:col-span-5 space-y-2">
                       <div className="flex items-center gap-2 text-xs text-[#5A625A]">
-                        <span className="font-medium text-[#234B38]">
+                        <span className="font-bold text-[#234B38] underline decoration-[#A8BBA8] underline-offset-4">
                           {item.categoryLabel}
                         </span>
                         <span aria-hidden="true">·</span>
-                        <span>
+                        <span className="font-light">
                           {item.verificationStatus === 'verified'
                             ? '상시 안내 확인'
                             : '공식 공지 확인 필요'}
                         </span>
                       </div>
 
-                      <h3 className="font-serif text-xl font-semibold text-[#303630]">
+                      <h3 className="font-serif text-xl font-bold text-[#303630]">
                         {item.title}
                       </h3>
 
-                      <p className="text-sm leading-relaxed text-[#5A625A]">
+                      <p className="text-sm font-light leading-relaxed text-[#5A625A]">
                         {item.summary}
                       </p>
                     </div>
 
                     <dl className="lg:col-span-5 grid grid-cols-2 gap-x-6 gap-y-4 rounded-lg border border-[#E7EAE6] bg-white p-5 text-xs">
                       <div>
-                        <dt className="text-[#5A625A]">운영 시간</dt>
-                        <dd className="mt-1 font-medium text-[#303630]">
+                        <dt className="font-light text-[#5A625A]">운영 시간</dt>
+                        <dd className="mt-1 font-semibold text-[#303630]">
                           {item.operatingHours}
                         </dd>
                       </div>
                       <div>
-                        <dt className="text-[#5A625A]">예약 여부</dt>
-                        <dd className="mt-1 font-medium text-[#303630]">
+                        <dt className="font-light text-[#5A625A]">예약 여부</dt>
+                        <dd className="mt-1 font-semibold text-[#303630]">
                           {item.reservationRequired}
                         </dd>
                       </div>
                       <div>
-                        <dt className="text-[#5A625A]">참가비</dt>
-                        <dd className="mt-1 font-medium text-[#303630]">
+                        <dt className="font-light text-[#5A625A]">참가비</dt>
+                        <dd className="mt-1 font-semibold text-[#303630]">
                           {item.fee}
                         </dd>
                       </div>
                       <div>
-                        <dt className="text-[#5A625A]">연령 안내</dt>
-                        <dd className="mt-1 font-medium text-[#303630]">
+                        <dt className="font-light text-[#5A625A]">연령 안내</dt>
+                        <dd className="mt-1 font-semibold text-[#303630]">
                           {item.ageLimit}
                         </dd>
                       </div>
@@ -174,7 +174,7 @@ export function ExperienceAndTipsSection({
                   </div>
 
                   {isExpanded ? (
-                    <div className="mt-4 flex items-start gap-2.5 rounded-md border border-[#E7EAE6] bg-white px-4 py-3 text-xs leading-relaxed text-[#303630]">
+                    <div className="mt-4 flex items-start gap-2.5 rounded-md border border-[#E7EAE6] bg-white px-4 py-3 text-xs font-light leading-relaxed text-[#303630]">
                       <AlertCircle
                         className="mt-0.5 h-4 w-4 shrink-0 text-[#234B38]"
                         aria-hidden="true"
@@ -201,18 +201,18 @@ export function ExperienceAndTipsSection({
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl space-y-3">
-            <p className="text-xs font-medium tracking-widest text-[#234B38]">
+            <p className="text-xs font-bold tracking-widest text-[#234B38]">
               04. Winter Tip
             </p>
             <h2
               id="winter-tip-heading"
-              className="font-serif text-2xl font-semibold text-[#234B38] sm:text-3xl lg:text-4xl"
-              style={{ textWrap: 'balance' }}
+              className="font-serif text-2xl leading-snug text-[#234B38] sm:text-3xl lg:text-4xl"
             >
-              안전하고 따뜻한 겨울 산책 준비
+              <span className="block font-light">안전하고</span>
+              <span className="block font-bold">따뜻한 겨울 산책 준비</span>
             </h2>
-            <p className="text-sm leading-relaxed text-[#5A625A] sm:text-base">
-              산자락에 자리한 겨울 수목원은 도심보다 기온이 낮고 그늘진 길에 눈이 오래 머뭅니다. 방문 전 네 가지 준비 사항을 확인해 보세요.
+            <p className="text-sm font-light leading-relaxed text-[#5A625A] sm:text-base">
+              산자락에 자리한 겨울 수목원은 도심보다 기온이 낮고 그늘진 길에 눈이 오래 머뭅니다. <strong className="font-semibold text-[#234B38]">방문 전 네 가지 준비 사항</strong>을 확인해 보세요.
             </p>
           </div>
 
@@ -232,17 +232,17 @@ export function ExperienceAndTipsSection({
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between border-b border-[#E7EAE6] pb-4">
-                    <span className="text-xs font-medium text-[#234B38] tabular-nums">
+                    <span className="text-xs font-bold text-[#234B38] tabular-nums">
                       {tip.category}
                     </span>
                     <TipIcon iconKey={tip.iconKey} />
                   </div>
 
-                  <h3 className="font-serif text-lg font-semibold text-[#303630]">
+                  <h3 className="font-serif text-lg font-bold text-[#303630]">
                     {tip.title}
                   </h3>
 
-                  <p className="text-sm leading-relaxed text-[#5A625A]">
+                  <p className="text-sm font-light leading-relaxed text-[#5A625A]">
                     {tip.description}
                   </p>
                 </div>
